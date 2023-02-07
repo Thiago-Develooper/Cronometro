@@ -36,7 +36,7 @@ section #cronometro {
     color: #fff;
 }
 
-#botoes {
+#botoes-section {
     display: flex;
     justify-content: center;
     padding-top: 20px;
