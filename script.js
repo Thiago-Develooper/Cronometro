@@ -2,16 +2,21 @@ let segundos = 0
 let minutos = 0
 let horas = 0
 let interval
+let limitadorDeStart = 0
 
 let cronometro = document.getElementById('cronometro')
 let title = document.getElementById('title')
 
 function start() {
-    interval = setInterval(contador, 1000)
+    if(limitadorDeStart === 0) {
+        interval = setInterval(contador, 1000)
+        limitadorDeStart++
+    }
 }
 
 function pause() {
     clearInterval(interval)
+    limitadorDeStart = 0
 }
 
 function restart() {
@@ -19,6 +24,7 @@ function restart() {
     horas = 0
     minutos = 0
     segundos = 0
+    limitadorDeStart = 0
     cronometro.innerText = '00:00:00'
     title.innerText = '00:00:00'
 }
